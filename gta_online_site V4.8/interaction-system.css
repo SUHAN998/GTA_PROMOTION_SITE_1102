@@ -1,0 +1,96 @@
+﻿/* Shared interaction language: restrained lift, warm accent, consistent timing. */
+:root {
+  --accent: #fbc02d;
+  --motion-fast: 200ms;
+  --motion-text: 550ms;
+  --motion-image: 800ms;
+  --motion-ease: cubic-bezier(0.25, 1, 0.5, 1);
+  --border-muted: rgba(255, 255, 255, 0.18);
+}
+.gold-text, .money-section .gold-text,
+.nav-menu a:hover, .nav-menu a.active { color: var(--accent); }
+.vehicle-intro-section { overflow: hidden; }
+/* Pin the section at viewport top; reserve the navbar space INSIDE it.
+   The portrait image must not determine the height of the pinned stage. */
+.vehicle-intro-section.vehicle-scroll-stage {
+  height: var(--intro-screen-height);
+  padding: calc(var(--intro-nav-height) + 24px) 0 24px;
+  display: flex;
+  align-items: center;
+}
+.vehicle-scroll-stage .v-header-container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-5);
+}
+.vehicle-intro-section.vehicle-scroll-stage .text-left,
+.vehicle-intro-section.vehicle-scroll-stage .image-right { width: 100%; min-width: 0; }
+.vehicle-intro-section.vehicle-scroll-stage .image-right { height: 100%; min-height: 0; }
+.vehicle-intro-section.vehicle-scroll-stage .image-right img {
+  height: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border: 0;
+}
+@media (max-height: 800px) {
+  .vehicle-scroll-stage .section-number { font-size: 72px; margin-bottom: 16px; }
+  .vehicle-intro-section.vehicle-scroll-stage .text-left h2 { font-size: 32px; margin-bottom: 16px; }
+  .vehicle-intro-section.vehicle-scroll-stage .text-left p { font-size: 16px; line-height: 1.6; margin-bottom: 0; }
+}
+.vehicle-intro-section .image-right img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--border-muted);
+  border-radius: 12px;
+}
+/* Text reveals across the lower sections use the same distance and easing. */
+.career-title, .plate-title { transform: translateY(24px); transition-duration: var(--motion-text); transition-timing-function: var(--motion-ease); transition-delay: 200ms; }
+.career-description .career-desc-line, .plate-description .plate-desc-line,
+.weekly-news-section .feature-card, .section-heading-title, .reveal-child {
+  transition-duration: var(--motion-text);
+  transition-timing-function: var(--motion-ease);
+}
+.reveal-child { transform: translateY(24px); }
+.btn-more, .plate-content .btn-more, .primary-cta-btn, .btn-buy,
+.btn-feedback-action, .btn-subscribe-action {
+  cursor: pointer;
+  transition: opacity var(--motion-text) var(--motion-ease),
+              transform var(--motion-text) var(--motion-ease),
+              background-color var(--motion-fast) ease,
+              color var(--motion-fast) ease,
+              border-color var(--motion-fast) ease,
+              translate var(--motion-fast) ease;
+}
+@media (hover: hover) {
+  .btn-more:hover, .plate-content .btn-more:hover, .primary-cta-btn:hover,
+  .btn-buy:hover, .btn-feedback-action:hover, .btn-subscribe-action:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: #111;
+    translate: 0 -2px;
+  }
+  .btn-subscribe-action:hover { transform: none; }
+}
+a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+.btn-more:active, .primary-cta-btn:active, .btn-buy:active,
+.btn-feedback-action:active, .btn-subscribe-action:active { translate: 0 0; }
+.nav-menu a { transition: color var(--motion-fast) ease; }
+.map-wrapper { border-color: var(--border-muted); border-radius: 12px; }
+.property-item { border-color: var(--border-muted); }
+.property-item .detail-box { border-radius: 12px; }
+.feedback-banner-container { border-radius: 12px; border-color: var(--border-muted); }
+.weekly-grid-wrapper { overscroll-behavior-x: contain; }
+
+@media (prefers-reduced-motion: reduce) {
+  .career-col .track { animation: none; }
+  .career-title, .plate-title, .career-desc-line, .plate-desc-line,
+  .reveal-child, .feature-card, .btn-more, .plate-content .btn-more {
+    transition-duration: 0s;
+    transition-delay: 0s;
+  }
+}

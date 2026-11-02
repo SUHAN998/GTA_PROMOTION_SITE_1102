@@ -1,0 +1,626 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA Online - 범죄 제국의 귀환</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+    <!-- <script src="js/script.js"></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chiron+Hei+HK:wght@200..900&amp;family=Noto+Sans+KR:wght@400..900&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="design-system.css">
+    <link rel="stylesheet" href="interaction-system.css">
+    <link rel="stylesheet" href="section-polish.css">
+</head>
+<body>
+
+
+    <header class="hero-header">
+    
+        <div class="sticky-nav">
+          <div class="nav-container">
+            <div class="nav-left">
+              <a href="#" class="logo-link">
+                <img src="img/Logo_White_1.png" alt="Rockstar Games" class="nav-logo-rockstar">
+                <img src="img/gta_online_logo.png" alt="GTA ONLINE" class="nav-logo-text">
+              </a>
+              <nav class="nav-menu">
+  <a href="#benefit-pinned-trigger" class="nav-link active" data-target="benefit-pinned-trigger">이벤트 소개</a>
+  <a href="#money-trigger" class="nav-link" data-target="money-trigger">초기 자금</a>
+  <a href="#property-trigger" class="nav-link" data-target="property-trigger">비즈니스 거점</a>
+  <a href="#vehicle-intro-section" class="nav-link" data-target="vehicle-intro-section">첫 애마</a>
+  <a href="#weekly-news-section" class="nav-link" data-target="weekly-news-section">주간 업데이트</a>
+</nav>
+            </div>
+            <div class="nav-right">
+            <button class="btn-buy">지금 접속</button>
+            
+            <div class="search-wrapper" id="searchWrapper">
+                <input type="text" class="search-input" placeholder="검색">
+                <button class="btn-search" id="searchBtn">
+                    <img src="img/search.png" alt="검색" class="ico-search-img">
+                </button>
+            </div>
+            
+            <div class="user-profile">
+                <img class="profile_pic" src="img/profile_pic.png" alt="profile_pic">
+            </div>
+        </div>
+          </div>
+        </div>
+
+        <!-- <div class="character-overlay">
+          <img src="img/A Safehouse in The Hills2.png" alt="Characters Overlay">
+        </div>
+
+        <div class="header-visual-content">
+          <div class="brand-logo-container">
+            <img src="img/Grand_Theft_Auto_Online_Logo1.png" alt="GRAND THEFT AUTO ONLINE" class="main-brand-logo">
+          </div>
+          <p class="release-date">2025. 12.</p>
+          <h1 class="main-heading">언덕 위의 안식처</h1>
+          <p class="description">
+            2025년 최고급 부동산이 언덕 위의 안식처로 GTA 온라인에 찾아옵니다. 범죄 계급의 최정상에 올랐다면, 로스 산토스에서 가장 고급스러운 동네 중 한 곳에 정성 들여 지은 궁전을 구매해 숨이 멎을 정도로 아름다운 전망과 최고의 편의 시설, 그리고 당신의 취향에 따라 꾸밀 수 있는 수많은 커스터마이징 옵션으로 자신만의 공간을 완성해 승리를 자축하세요.
+          </p>
+        </div>
+
+        <button class="btn-trailer-fixed">
+          <span class="play-icon">▶</span> 트레일러 감상하기
+        </button> -->
+
+
+    </header>
+
+
+
+    <section class="hero-section" id="hero-pinned-trigger">
+    <div class="hero-sticky-viewport">
+        <div class="hero-bg-layer"></div>
+        <div class="hero-gradient-overlay"></div>
+
+        <div class="hero-character-wrap">
+            <img src="img/character-overlay.png" alt="Characters" class="hero-characters">
+        </div>
+
+        <div class="hero-content">
+            <div class="logo-wrap morph-target row-1">
+                <img src="img/Grand_Theft_Auto_Online_Logo1.png" alt="GTA Online" class="main-logo">
+            </div>
+            <h2 class="main-title morph-target row-2">범죄 제국의 귀환</h2>
+            <p class="sub-text morph-target row-3">신규 & 복귀 유저 특별 지원 프로모션</p>
+            
+            <div class="description-text morph-target row-4">
+                지금 로스 산토스로 돌아와 당신만의<br>
+                범죄 제국을 건설하십시오. 단 2주간<br>
+                접속만 해도 정착을 위한 필수 보상을<br>
+                100% 무상 지원합니다.
+            </div>
+
+            <div class="duration-box row-last">
+                <span class="duration-title">이벤트 기간</span>
+                <p class="duration-date"><span class="highlight-date">2026.06.25 ~ 2026.07.09</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <section class="benefit-section" id="benefit-pinned-trigger">
+    <div class="benefit-sticky-viewport">
+        <div class="benefit-container">
+            
+            <div class="benefit-header">
+                <h3>신규 & 복귀 유저를 위한</h3>
+                <h2>역대급 무상 지원 혜택</h2>
+                <div class="benefit-divider"></div>
+                <p class="benefit-date">2026.06.25 ~ 2026.07.09</p>
+            </div>
+
+            <div class="benefit-cards">
+                
+                <div class="benefit-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="front-logo">
+                                <img src="img/Logo_White_1.png" alt="Rockstar Games White Logo" class="newsletter-rockstar-logo">
+                            </span>
+                            <div class="front-pattern"></div>
+                        </div>
+                        <div class="card-back">
+                            <span class="card-num">01</span>
+                            <div class="card-icon-wrap">
+                                <img src="img/001Dollor.png" alt="money icon" class="card-icon">
+                            </div>
+                            <h4 class="card-title">1,000,000 GTA 달러</h4>
+                            <p class="card-desc">로스 산토스 정착을 위한<br>든든한 초기 자금 즉시 지급</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="front-logo">
+                                <img src="img/Logo_White_1.png" alt="Rockstar Games White Logo" class="newsletter-rockstar-logo">
+                            </span>
+                            <div class="front-pattern"></div>
+                        </div>
+                        <div class="card-back">
+                            <span class="card-num">02</span>
+                            <div class="card-icon-wrap">
+                                <img src="img/002officehome.png" alt="property icon" class="card-icon">
+                            </div>
+                            <h4 class="card-title">필수 비즈니스 부동산</h4>
+                            <p class="card-desc">범죄 제국의 기반이 될<br>아파트, CEO 오피스 무상 제공</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="front-logo">
+                                <img src="img/Logo_White_1.png" alt="Rockstar Games White Logo" class="newsletter-rockstar-logo">
+                            </span>
+                            <div class="front-pattern"></div>
+                        </div>
+                        <div class="card-back">
+                            <span class="card-num">03</span>
+                            <div class="card-icon-wrap">
+                                <img src="img/003car_icon.png" alt="car icon" class="card-icon">
+                            </div>
+                            <h4 class="card-title">최고급 슈퍼카</h4>
+                            <p class="card-desc">초반 스피드를 책임질<br>고성능 슈퍼카 1종 무료 지급</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div> </div> </div> </section>
+
+    <section class="money-section" id="money-trigger">
+    <div class="bed-background"></div>
+    
+    <div class="money-gradient-overlay"></div>
+
+    <div class="money-container">
+        <div class="text-side">
+            <h1 class="money-num">01</h1>
+            <h2 class="money-title">든든한 범죄 자금<br><span class="gold-text">즉시 입금</span></h2>
+            <p class="money-p">GTA Online 접속 즉시 메이즈 은행 계좌로 <br>1,000,000 GTA 달러가 무상 입금됩니다. <br>초기 자금으로 무기, 차량 등 원하는 곳에 <br>자유롭게 투자해 보십시오.</p>
+            <span class="money-notice">(* 최대 72시간 이내 순차 지급)</span>
+        </div>
+        
+        <div class="image-side">
+            <img src="img/01money-character.png" alt="Character with money" class="money-boss">
+        </div>
+    </div>
+</section>
+
+
+
+    <div id="property-trigger"></div>
+    <section class="property-section">
+        <div class="background-layer"></div>
+        <div class="character-wrapper">
+            <img src="img/CEO.png" alt="Boss Character" class="boss-img">
+        </div>
+        <div class="gradient-overlay"></div>
+        <div class="property-content-right">
+            <h1 class="section-number">02</h1>
+            <h2>제국의 기반이 될<br><span class="white-text">본거지 무상 제공</span></h2>
+            <p class="desc">CEO로서 범죄 제국을 이끌어갈 총 120만 달러 <br>상당의 필수 인프라를 통째로 지원합니다.</p>
+        </div>
+    </section>
+
+
+    <div id="map-pin-trigger"></div>
+    
+    <section class="map-interactive-section">
+        <div class="map-container">
+            <div class="property-selector">
+                <h3 class="title">지급 부동산</h3>
+                <ul class="property-list">
+                    <li class="property-item" data-target="alta">
+                        <span class="item-name">[알타 St 아파트]</span>
+                        <div class="detail-box">
+                            <h4>습격 작전의 완벽한 베이스 캠프</h4>
+                            <p>로스 산토스 중심가에 위치한 최고급 아파트입니다. 화려한 도심의 야경을 감상할 수 있는 것은 물론, 일류 범죄자로 거듭나기 위한 필수 관문인 '오리지널 습격 작전'을 계획하고 주도할 수 있는 전용 계획실과 당신의 애마 10대를 지킬 수 있는 안전한 차고가 완벽하게 제공됩니다.</p>
+                        </div>
+                    </li>
+                    <li class="property-item" data-target="maze">
+                        <span class="item-name">[메이즈 은행 웨스트 오피스]</span>
+                        <div class="detail-box">
+                            <h4>당신의 범죄 제국을 이끌 경영 본부</h4>
+                            <p>이제 일개 양아치가 아닌 합법적인 기업의 CEO로 데뷔할 시간입니다. 이 웅장한 오피스에서 비서의 극진한 보좌를 받으며 스페셜 패키지, 반반반(반입/반출) 등 거대 밀무역 비즈니스를 총괄하고 부를 축적하십시오.</p>
+                        </div>
+                    </li>
+                    <li class="property-item" data-target="railyard">
+                        <span class="item-name">[레일야드 창고 (중형)]</span>
+                        <div class="detail-box">
+                            <h4>수백 배의 폭리를 취할 밀수품 보관 기지</h4>
+                            <p>오피스와 연동되는 밀무역 거상들의 핵심 물류 거점입니다. 암시장 전자제품, 제3세계의 암거래 무기류, 고가의 예술품과 보석 등을 안전하게 쟁여두십시오. 최대 42개의 독점 밀수품을 비축한 뒤, 암시장에 몇 배로 되팔아 상상 초월의 폭리를 취할 수 있습니다.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="map-wrapper">
+                <div class="map-inner-canvas">
+                    <img src="img/Los Santos close up.png" alt="Los Santos Map" class="map-base-img">
+                    <div class="marker marker-alta" data-prop="alta"></div>
+                    <div class="marker marker-maze" data-prop="maze"></div>
+                    <div class="marker marker-railyard" data-prop="railyard"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="vehicle-intro-section" id="vehicle-intro-section">
+        <div class="v-header-container">
+            <div class="text-left">
+                <h1 class="section-number">03</h1>
+                <h2>당신의 첫 애마<br><span class="gold-text">1종 무료 선택</span></h2>
+                <p>일류 범죄자에게 걸맞는 특권을 누리십시오. <br>시몬의 전시장 쇼룸을 가득 채운 5대 걸작들 중 <br>단 1대를 마음대로 고를 기회입니다. 직접 <br>시승으로 확인한 뒤 원하는 애마를 고르십시오.</p>
+            </div>
+            <div class="image-right">
+                <img src="img/jester rr.png" alt="Vehicle preview">
+            </div>
+        </div>
+    </section>
+
+    <section class="vehicle-slider-section">
+    <div class="podium-bg-system">
+        <div class="podium-radial-light"></div>
+        <div class="podium-floor"></div>
+    </div>
+    
+    <h2 class="slider-title">지급 차량(택1)</h2>
+    
+    <div class="fixed-vehicle-info">
+        <span class="brand" id="fixed-brand">Grotti</span>
+        <h3 class="model-name" id="fixed-model">Turismo Omaggio</h3>
+        <span class="class-type" id="fixed-class">Class : Super</span>
+    </div>
+
+
+    <div class="slider-outer">
+        <div class="nav-btn-wrapper">
+            <button class="nav-btn prev-btn" aria-label="이전 차량"></button>
+            <button class="nav-btn next-btn" aria-label="다음 차량"></button>
+        </div>
+        
+        <div class="slider-container" id="image-track">
+            <div class="slide" data-index="1" data-brand="Grotti" data-model="Turismo Omaggio" data-class="Class : Super" data-spec1="92" data-spec2="90" data-spec3="85" data-spec4="88" data-val1="9.2" data-val2="9.0" data-val3="8.5" data-val4="8.8">
+                <div class="vehicle-reveal-inner"><img src="img/66_turismo_omaggio-removebg-preview.png" alt="Turismo Omaggio"></div>
+            </div>
+            <div class="slide" data-index="2" data-brand="Übermacht" data-model="Sentinel GTS" data-class="Class : Sport" data-spec1="90" data-spec2="92" data-spec3="90" data-spec4="91" data-val1="9.0" data-val2="9.2" data-val3="9.0" data-val4="9.1">
+                <div class="vehicle-reveal-inner"><img src="img/66_Sentinel_gts-removebg-preview.png" alt="Sentinel GTS"></div>
+            </div>
+            <div class="slide" data-index="3" data-brand="Dinka" data-model="Jester RR" data-class="Class : Sport" data-spec1="88" data-spec2="86" data-spec3="94" data-spec4="96" data-val1="8.8" data-val2="8.6" data-val3="9.4" data-val4="9.6">
+                <div class="vehicle-reveal-inner"><img src="img/66_Jester_RR-removebg-preview.png" alt="Jester RR"></div>
+            </div>
+            <div class="slide" data-index="4" data-brand="Enus" data-model="Jubilee" data-class="Class : SUV" data-spec1="87" data-spec2="85" data-spec3="92" data-spec4="93" data-val1="8.7" data-val2="8.5" data-val3="9.2" data-val4="9.3">
+                <div class="vehicle-reveal-inner"><img src="img/66_Enus_Jubilee-removebg-preview.png" alt="Jubilee"></div>
+            </div>
+            <div class="slide" data-index="5" data-brand="Bravado" data-model="Buffalo STX" data-class="Class : Muscle" data-spec1="85" data-spec2="89" data-spec3="88" data-spec4="90" data-val1="8.5" data-val2="89" data-val3="8.8" data-val4="9.0">
+                <div class="vehicle-reveal-inner"><img src="img/66_Bravado_Buffalo_STX-removebg-preview.png" alt="Buffalo STX"></div>
+            </div>
+            </div>
+    </div>
+
+
+
+    <!-- <div class="slider-outer">
+        <button class="nav-btn prev-btn" aria-label="이전 차량">&lt;</button>
+        
+        <div class="slider-container" id="image-track">
+            <div class="slide" data-index="1" data-brand="Grotti" data-model="Turismo Omaggio" data-class="Class : Super" data-spec1="92" data-spec2="90" data-spec3="85" data-spec4="88" data-val1="9.2" data-val2="9.0" data-val3="8.5" data-val4="8.8">
+                <img src="img/66_turismo_omaggio-removebg-preview.png" alt="Turismo Omaggio">
+            </div>
+            <div class="slide" data-index="2" data-brand="Übermacht" data-model="Sentinel GTS" data-class="Class : Sport" data-spec1="90" data-spec2="92" data-spec3="90" data-spec4="91" data-val1="9.0" data-val2="9.2" data-val3="9.0" data-val4="9.1">
+                <img src="img/66_Sentinel_gts-removebg-preview.png" alt="Sentinel GTS">
+            </div>
+            <div class="slide" data-index="3" data-brand="Dinka" data-model="Jester RR" data-class="Class : Sport" data-spec1="88" data-spec2="86" data-spec3="94" data-spec4="96" data-val1="8.8" data-val2="8.6" data-val3="9.4" data-val4="9.6">
+                <img src="img/66_Jester_RR-removebg-preview.png" alt="Jester RR">
+            </div>
+            <div class="slide" data-index="4" data-brand="Enus" data-model="Jubilee" data-class="Class : SUV" data-spec1="87" data-spec2="85" data-spec3="92" data-spec4="93" data-val1="8.7" data-val2="8.5" data-val3="9.2" data-val4="9.3">
+                <img src="img/66_Enus_Jubilee-removebg-preview.png" alt="Jubilee">
+            </div>
+            <div class="slide" data-index="5" data-brand="Bravado" data-model="Buffalo STX" data-class="Class : Muscle" data-spec1="85" data-spec2="89" data-spec3="88" data-spec4="90" data-val1="8.5" data-val2="89" data-val3="8.8" data-val4="9.0">
+                <img src="img/66_Bravado_Buffalo_STX-removebg-preview.png" alt="Buffalo STX">
+            </div>
+        </div>
+        
+        <button class="nav-btn next-btn" aria-label="다음 차량">&gt;</button>
+    </div> -->
+
+    <div class="fixed-specs-container">
+        <div class="specs-box">
+            <div class="spec-row">
+                <span>최고속도</span>
+                <div class="bar"><div class="fill" id="bar-speed"></div></div>
+                <span class="val" id="val-speed">0.0</span>
+            </div>
+            <div class="spec-row">
+                <span>가속력</span>
+                <div class="bar"><div class="fill" id="bar-accel"></div></div>
+                <span class="val" id="val-accel">0.0</span>
+            </div>
+            <div class="spec-row">
+                <span>제동력</span>
+                <div class="bar"><div class="fill" id="bar-brake"></div></div>
+                <span class="val" id="val-brake">0.0</span>
+            </div>
+            <div class="spec-row">
+                <span>마찰력</span>
+                <div class="bar"><div class="fill" id="bar-traction"></div></div>
+                <span class="val" id="val-traction">0.0</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div id="cta-pin-trigger"></div>
+    <section class="pinned-cta-section">
+        <div class="sunset-bg-layer"></div>
+        <div class="black-gradient-side"></div>
+        <div class="cta-inner-content">
+            <h2 class="fade-el">로스 산토스가<br>당신을 기다립니다.</h2>
+            <p class="fade-el text-desc">3류 양아치 시절의 고단한 편의점 털이는 잊으십시오.<br>지금 로그인하는 순간, <span class="gold-text">역대급 무상 자산</span>들이<br>이 도시에 발을 딛는 당신의 새로운 권력이 됩니다.</p>
+            <p class="fade-el danger-text">기회는 단 한번 뿐 입니다.</p>
+            <p class="fade-el text-sub">지금 <span class="gold-text">즉시 접속</span>해 모든 특전들을 선점하십시오.</p>
+            <div class="fade-el cta-btn-wrap">
+                <a href="#" class="primary-cta-btn">지금 바로 접속하기</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="weekly-news-section" id="weekly-news-section">
+    <div class="weekly-news-container">
+        <h2 class="section-heading-title">New This Week</h2>
+        
+        <div class="weekly-news-slider">
+            
+            <div class="weekly-grid-wrapper">
+                
+                <div class="feature-card large-feature-card">
+                    <img src="img/motor_madness.jpg" alt="Motor Madness" class="weekly-card-img">
+                </div>
+
+                <div class="weekly-right-content">
+                    
+                    <div class="grid-row-top">
+                        <div class="feature-card medium-feature-card"><img src="img/FMJ MK5.png" alt="" class="weekly-card-img"></div>
+                        <div class="feature-card medium-feature-card"><img src="img/banshee_gts.png" alt="" class="weekly-card-img"></div>
+                        <div class="feature-card medium-feature-card"><img src="img/racing2.png" alt="" class="weekly-card-img"></div>
+                        <div class="feature-card medium-feature-card"><img src="img/online02.png" alt="" class="weekly-card-img"></div>
+                    </div>
+
+                    <div class="grid-row-bottom">
+                        <div class="feature-card small-feature-card"><img src="img/Racing.png" alt="" class="weekly-card-img"></div>
+                        <div class="feature-card small-feature-card"><img src="img/The Chop Shop.png" alt="" class="weekly-card-img"></div>
+                        <div class="feature-card small-feature-card"><img src="img/car_meet_series.png" alt="" class="weekly-card-img"></div>
+                        <div class="feature-card small-feature-card"><img src="img/robbery.png" alt="" class="weekly-card-img"></div>
+                        <div class="feature-card small-feature-card"><img src="img/online03.png" alt="" class="weekly-card-img"></div>
+                    </div>
+
+                </div>
+
+            </div> </div>
+    </div>
+</section>
+
+    <section class="career-progression-section">
+    <img src="img/rockstar_backgrownd.png" alt="Rockstar Artwork Background" class="career-bg-wallpaper">
+
+    <div class="career-bg-container">
+        <div class="career-col col-reverse">
+            <div class="track">
+                <div class="card"><img src="img/2025 A Safehouse in The Hills.png" alt="2025 A Safehouse in The Hills"></div>
+                <div class="card"><img src="img/2025 Oscar Guzman Flies Again.png" alt="2025 Oscar Guzman Flies Again"></div>
+                <div class="card"><img src="img/2025 Money Fronts.png" alt="2025 Money Fronts"></div>
+                <div class="card"><img src="img/2024 Agents of Sabotage.png" alt="2024 Agents of Sabotage"></div>
+                <div class="card"><img src="img/2024 Bottom Dollar Bounties.png" alt="2024 Bottom Dollar Bounties"></div>
+                
+                <div class="card"><img src="img/2025 A Safehouse in The Hills.png" alt="2025 A Safehouse in The Hills"></div>
+                <div class="card"><img src="img/2025 Oscar Guzman Flies Again.png" alt="2025 Oscar Guzman Flies Again"></div>
+                <div class="card"><img src="img/2025 Money Fronts.png" alt="2025 Money Fronts"></div>
+                <div class="card"><img src="img/2024 Agents of Sabotage.png" alt="2024 Agents of Sabotage"></div>
+                <div class="card"><img src="img/2024 Bottom Dollar Bounties.png" alt="2024 Bottom Dollar Bounties"></div>
+            </div>
+        </div>
+
+        <div class="career-col">
+            <div class="track">
+                <div class="card"><img src="img/2023 The Chop Shop.png" alt="2023 The Chop Shop"></div>
+                <div class="card"><img src="img/2023 San Andreas Mercenaries.png" alt="2023 San Andreas Mercenaries"></div>
+                <div class="card"><img src="img/2022 Los Santos Drug Wars.png" alt="2022 Los Santos Drug Wars"></div>
+                <div class="card"><img src="img/2022 The Criminal Enterprises.png" alt="2022 The Criminal Enterprises"></div>
+                <div class="card"><img src="img/2021 The Contract.png" alt="2021 The Contract"></div> 
+                
+                <div class="card"><img src="img/2023 The Chop Shop.png" alt="2023 The Chop Shop"></div>
+                <div class="card"><img src="img/2023 San Andreas Mercenaries.png" alt="2023 San Andreas Mercenaries"></div>
+                <div class="card"><img src="img/2022 Los Santos Drug Wars.png" alt="2022 Los Santos Drug Wars"></div>
+                <div class="card"><img src="img/2022 The Criminal Enterprises.png" alt="2022 The Criminal Enterprises"></div>
+                <div class="card"><img src="img/2021 The Contract.png" alt="2021 The Contract"></div> 
+            </div>
+        </div>
+
+        <div class="career-col col-reverse">
+            <div class="track">
+                <div class="card"><img src="img/2021 Los Santos Tuners.png" alt="2021 Los Santos Tuners"></div>
+                <div class="card"><img src="img/2020 TheCayoPericoHeist.png" alt="2020 TheCayoPericoHeist"></div>
+                <div class="card"><img src="img/2020 GTA Online Diamond Casino & Resort.png" alt="2020 GTA Online Diamond Casino & Resort"></div>
+                <div class="card"><img src="img/2019 diamond-casino-heist.png" alt="2019 diamond-casino-heist"></div>
+                <div class="card"><img src="img/2022 The Criminal Enterprises.png" alt="2022 The Criminal Enterprises"></div> 
+                
+                <div class="card"><img src="img/2021 Los Santos Tuners.png" alt="2021 Los Santos Tuners"></div>
+                <div class="card"><img src="img/2020 TheCayoPericoHeist.png" alt="2020 TheCayoPericoHeist"></div>
+                <div class="card"><img src="img/2020 GTA Online Diamond Casino & Resort.png" alt="2020 GTA Online Diamond Casino & Resort"></div>
+                <div class="card"><img src="img/2019 diamond-casino-heist.png" alt="2019 diamond-casino-heist"></div>
+                <div class="card"><img src="img/2022 The Criminal Enterprises.png" alt="2022 The Criminal Enterprises"></div> 
+            </div>
+        </div>
+    </div>
+
+    <div class="career-overlay-layer">
+        <div class="career-container">
+            <div class="career-content">
+                <h2 class="career-title">경력 진행</h2>
+                <p class="career-description">
+                    <span class="career-desc-line">당신이 로스 산토스에서 일궈낸 <span class="bold-text">화려한 업적</span>들을</span>
+                    <span class="career-desc-line"><span class="bold-text">경력</span>에서 모두 확인해 보십시오. <span class="bold-text">새로운 도전</span>을 발견하고</span>
+                    <span class="career-desc-line">거대한 뒷세계의 먹이사슬 최상단에 올라가면서</span>
+                    <span class="career-desc-line"><span class="bold-text">귀중한 보상</span>들을 손에 넣어보십시오.</span>
+                </p>
+                <a href="#" class="btn-more">자세히 보기</a>
+            </div>
+            <div class="slider-indicators">
+                <span class="dot active"></span> <span class="dot"></span> <span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="career-bottom-spacer"></div>
+
+    
+
+    <section class="license-plate-section">
+        
+        <div class="plate-showcase-zone">
+            <div class="showcase-thumbnail-frame">
+                <img src="img/plate_creator.png" alt="License Plate Customizer" class="plate-main-visual">
+            </div>
+        </div>
+
+        <div class="plate-overlay-layer">
+            <div class="plate-container">
+                
+                <div class="plate-content">
+                    <img src="img/Los_Santos_Customs_logo.png" alt="Los Santos Customs" class="plate-brand-logo">
+                    
+                    <h2 class="plate-title">나만의 번호판</h2>
+                    <p class="plate-description">
+                        <span class="plate-desc-line">남들과는 <span class="bold-text">차별화된 독창성</span>을 부여하십시오.</span>
+                        <span class="plate-desc-line">로스 산토스 전역에 당신의 <span class="bold-text">존재감</span>을 각인시키고</span>
+                        <span class="plate-desc-line">뒷세계 조직원들에게 <span class="bold-text">압도적인 공포와 경외심</span>을 선사하십시오.</span>
+                    </p>
+                    <a href="#" class="btn-more">자세히 보기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <div class="plate-bottom-spacer"></div>
+
+
+        
+
+        <section class="feedback-banner-section">
+          <div class="feedback-banner-container">
+            <div class="feedback-text-box">
+              <h3 class="feedback-title reveal-child">여러분의 의견을 들려주세요</h3>
+              <p class="feedback-description reveal-child">
+                GTA 온라인은 재밌게 즐기고 계신가요? 게임의 미래를 만들어갈 수 있도록<br>
+                여러분의 생각과 아이디어를 공유해 주세요.
+              </p>
+            </div>
+            <a href="#" class="btn-feedback-action reveal-child">피드백 보내기</a>
+          </div>
+        </section>
+
+        <section class="newsletter-section">
+          <div class="newsletter-container">
+            <div class="newsletter-logo-wrapper reveal-child">
+              <img src="img/Logo_White_1.png" alt="Rockstar Games White Logo" class="newsletter-rockstar-logo">
+            </div>
+            
+            <h2 class="newsletter-title reveal-child">Rockstar Games 이메일 리스트 구독하기</h2>
+            <p class="newsletter-description reveal-child">
+              이메일 뉴스레터를 구독하면 Rockstar Games 및 관련 제휴사로부터<br>
+              게임 공지 사항, 업데이트, 특별 이벤트 및 혜택에 관한 세부 정보 등<br>
+              다양한 정보를 받아보실 수 있습니다.
+            </p>
+            
+            <a href="#" class="btn-subscribe-action reveal-child">지금 구독하기</a>
+          </div>
+        </section>
+
+    </main>
+
+
+
+
+    <footer class="global-footer">
+        <div class="footer-upper-links">
+            <div class="links-left">
+                <a href="#">문의</a>
+                <a href="#">채용</a>
+                <a href="#">커뮤니티 정보</a>
+                <a href="#">구독하기</a>
+            </div>
+            <div class="links-right">
+                <div class="language-selector-box">
+                    <span class="globe-icon">🌐</span>
+                    <span class="lang-text">한국어</span>
+                    <span class="arrow-down">▼</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-middle-policy">
+            <div class="policy-links-left">
+                <a href="#">기업</a>
+                <a href="#">개인 정보</a>
+                <a href="#">쿠키 설정</a>
+                <a href="#">쿠키 정책</a>
+                <a href="#">법률 관련</a>
+            </div>
+            <div class="social-icons-right">
+                <a href="#" class="social-link"><img src="img/9 instagram.png" alt="Instagram"></a>
+                <a href="#" class="social-link"><img src="img/9 twitter.png" alt="Twitter"></a>
+                <a href="#" class="social-link"><img src="img/9 youtube.png" alt="YouTube"></a>
+                <a href="#" class="social-link"><img src="img/9 facebook.png" alt="Facebook"></a>
+                <a href="#" class="social-link"><img src="img/9 tiktok.png" alt="TikTok"></a>
+                <a href="#" class="social-link"><img src="img/9 discord.png" alt="Discord"></a>
+                <a href="#" class="social-link"><img src="img/9 twitch.png" alt="Twitch"></a>
+            </div>
+        </div>
+
+        <div class="footer-bottom-copyright">
+            <div class="brand-left-zone">
+                <img src="img/Logo_White.png" alt="Rockstar Games" class="footer-mini-logo">
+                <span class="company-brand-label">Rockstar Games</span>
+            </div>
+            <div class="locations-list">
+                <span>New York</span>
+                <span>London</span>
+                <span>Paris</span>
+                <span>Bogotá</span>
+            </div>
+            <div class="legal-copyright-code">MCMXCVIII</div>
+        </div>
+
+        <div class="rating-badges-outer">
+            <div class="rating-badges-container">
+                <div class="badge-item"><img src="img/for_adult.png" alt="청소년이용불가"></div>
+                <div class="badge-item"><img src="img/02.png" alt="폭력성"></div>
+                <div class="badge-item"><img src="img/04.png" alt="언어의 부적절성"></div>
+                <div class="badge-item"><img src="img/05.png" alt="약물"></div>
+                <div class="badge-item"><img src="img/06.png" alt="범죄"></div>
+                <div class="badge-item"><img src="img/07.png" alt="사행성"></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="interactions.js"></script>
+    <script src="podium-reveal.js"></script>
+</body>
+</html>

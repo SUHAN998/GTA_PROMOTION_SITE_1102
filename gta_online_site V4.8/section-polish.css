@@ -1,0 +1,96 @@
+/* Backgrounds only: retain the existing card grid, content and hero styling. */
+.benefit-sticky-viewport {
+  background-color: #000;
+  background-image:
+    linear-gradient(to bottom, #000 0%, transparent 24%, transparent 72%, #000 100%),
+    linear-gradient(rgba(0, 0, 0, .86), rgba(0, 0, 0, .86)),
+    url('img/Los Santos Sunset.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.weekly-news-section {
+  background-color: #0b0b0b;
+  background-image:
+    linear-gradient(to bottom, #000 0%, transparent 24%, transparent 72%, #0b0b0b 100%),
+    linear-gradient(rgba(0, 0, 0, .88), rgba(0, 0, 0, .88)),
+    url('img/Racing1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* A dedicated inner wrapper preserves the carousel track's transform.
+   Its bounds are exactly the slide's existing content box. Visible by default. */
+.vehicle-reveal-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vehicle-slider-section.podium-reveal-ready .vehicle-reveal-inner {
+  opacity: 0;
+  transform: translateY(36px);
+}
+.vehicle-slider-section.podium-revealed .vehicle-reveal-inner {
+  opacity: 1;
+  transform: none;
+  transition: opacity 700ms cubic-bezier(.22, 1, .36, 1),
+              transform 700ms cubic-bezier(.22, 1, .36, 1);
+}
+.vehicle-slider-section.podium-reveal-immediate .vehicle-reveal-inner {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .vehicle-slider-section .vehicle-reveal-inner {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Compact podium chrome; retain slide dimensions and the 34vh image area. */
+.vehicle-slider-section {
+  --podium-nav-height: 90px;
+  padding: calc(var(--podium-nav-height) + 16px) 0 16px;
+  min-height: 100svh;
+  justify-content: center;
+}
+.vehicle-slider-section .slider-title { font-size: clamp(22px, 2vw, 30px); line-height: 1.2; margin-bottom: 8px; }
+.vehicle-slider-section .fixed-vehicle-info { margin-bottom: 8px; line-height: 1; }
+.vehicle-slider-section .fixed-vehicle-info .brand { font-size: 12px; line-height: 1.3; margin-bottom: 4px; }
+.vehicle-slider-section .fixed-vehicle-info .model-name { font-size: clamp(22px, 2vw, 30px); line-height: 1.2; margin: 0 0 4px; }
+.vehicle-slider-section .fixed-vehicle-info .class-type { font-size: 12px; line-height: 1.3; }
+.vehicle-slider-section .fixed-specs-container { margin: 8px 0 0; }
+.vehicle-slider-section .specs-box { width: min(400px, calc(100% - 2 * var(--gutter))); padding-top: 8px; }
+.vehicle-slider-section .spec-row { margin: 6px 0; font-size: 12px; line-height: 1.3; }
+.vehicle-slider-section .spec-row span:first-child { width: 64px; }
+.vehicle-slider-section .spec-row .val { width: 28px; font-size: 12px; line-height: 1.3; }
+.vehicle-slider-section .spec-row .bar { height: 5px; margin-inline: 16px; }
+@media (max-width: 1200px) {
+  .vehicle-slider-section { --podium-nav-height: 136px; }
+}
+@media (max-height: 700px) {
+  .vehicle-slider-section { padding-top: calc(var(--podium-nav-height) + 8px); padding-bottom: 8px; }
+  .vehicle-slider-section .slider-title { font-size: 20px; margin-bottom: 4px; }
+  .vehicle-slider-section .fixed-vehicle-info { margin-bottom: 4px; }
+  .vehicle-slider-section .fixed-vehicle-info .brand { font-size: 11px; margin-bottom: 2px; }
+  .vehicle-slider-section .fixed-vehicle-info .model-name { font-size: 22px; margin-bottom: 2px; }
+  .vehicle-slider-section .fixed-specs-container { margin-top: 4px; }
+  .vehicle-slider-section .specs-box { padding-top: 4px; }
+  .vehicle-slider-section .spec-row { margin: 3px 0; line-height: 1.2; }
+}
+
+.podium-scroll-reveal .vehicle-reveal-inner { transition: none; }
+
+/* Warm, low-contrast light; its opacity is scrubbed with the vehicle reveal. */
+.vehicle-slider-section .podium-radial-light {
+  background: radial-gradient(circle,
+    rgba(251, 192, 45, 0.32) 0%,
+    rgba(251, 192, 45, 0.12) 36%,
+    rgba(251, 192, 45, 0) 70%);
+}
+.podium-scroll-reveal .podium-radial-light { opacity: 0; }

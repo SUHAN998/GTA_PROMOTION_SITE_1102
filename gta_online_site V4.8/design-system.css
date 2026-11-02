@@ -1,0 +1,262 @@
+﻿/* Shared visual scale. Loaded after the original animation/layout stylesheet. */
+:root {
+  --font-ui: 'Chiron Hei HK', 'Noto Sans KR', 'Malgun Gothic', system-ui, sans-serif;
+  --content-width: 1250px;
+  --gutter: clamp(20px, 4vw, 64px);
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --section-space: clamp(64px, 7vw, 112px);
+  --text-small: 0.875rem;
+  --text-ui: 1rem;
+  --text-body: clamp(1rem, 0.9rem + 0.25vw, 1.125rem);
+  --text-subtitle: clamp(1.125rem, 1rem + 0.4vw, 1.5rem);
+  --text-title: clamp(2rem, 1.25rem + 2.5vw, 3rem);
+  --text-number: clamp(4.5rem, 3rem + 5vw, 7.5rem);
+  --heading-leading: 1.25;
+  --body-leading: 1.7;
+}
+
+* { font-family: var(--font-ui); }
+body { font-family: var(--font-ui); font-size: var(--text-ui); line-height: var(--body-leading); }
+button, input, a, .global-footer, .benefit-section,
+.hero-section .hero-content, .legal-copyright-code { font-family: var(--font-ui); }
+h2, h3, h4, p { word-break: keep-all; overflow-wrap: break-word; }
+
+/* All ordinary content follows the same left/right alignment. */
+.benefit-container, .money-section .money-container, .map-container,
+.v-header-container, .weekly-news-container, .career-container,
+.plate-container, .newsletter-container, .feedback-banner-container,
+.footer-upper-links, .footer-middle-policy, .footer-bottom-copyright,
+.rating-badges-container {
+  width: min(var(--content-width), calc(100% - 2 * var(--gutter)));
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: 0;
+}
+.hero-section .hero-content {
+  left: max(var(--gutter), calc((100% - var(--content-width)) / 2));
+  width: min(520px, calc(100% - 2 * var(--gutter)));
+  bottom: 10%;
+}
+.property-section .property-content-right {
+  width: min(540px, calc(100% - 2 * var(--gutter)));
+  margin-right: max(var(--gutter), calc((100% - var(--content-width)) / 2));
+  padding-right: 0;
+}
+.cta-inner-content {
+  max-width: 640px;
+  padding-left: max(var(--gutter), calc((100vw - var(--content-width)) / 2));
+  padding-right: var(--space-3);
+  box-sizing: content-box;
+}
+
+/* Equal semantic roles share a type size, weight and rhythm. */
+.hero-section .main-title, .benefit-header h2, .money-title,
+.property-section .property-content-right h2, .vehicle-intro-section .text-left h2,
+.slider-title, .cta-inner-content h2, .career-title, .plate-title {
+  font-size: var(--text-title);
+  font-weight: 800;
+  line-height: var(--heading-leading);
+  letter-spacing: -0.04em;
+  margin: 0 0 var(--space-3);
+}
+.weekly-news-section h2, .section-heading-title, .property-selector .title,
+.feedback-title, .newsletter-title {
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  font-weight: 700;
+  line-height: var(--heading-leading);
+  letter-spacing: -0.025em;
+  margin: 0 0 var(--space-3);
+}
+.hero-section .description-text, .money-p,
+.property-section .property-content-right .desc, .vehicle-intro-section .text-left p,
+.cta-inner-content .text-desc, .cta-inner-content .text-sub,
+.career-description, .plate-description, .feedback-description, .newsletter-description {
+  font-size: var(--text-body);
+  line-height: var(--body-leading);
+  letter-spacing: -0.015em;
+  margin: 0 0 var(--space-3);
+}
+.hero-section .sub-text, .benefit-header h3,
+.hero-section .duration-title, .hero-section .duration-date,
+.fixed-vehicle-info .brand, .property-item .item-name,
+.cta-inner-content .danger-text {
+  font-size: var(--text-subtitle);
+  line-height: 1.5;
+  margin-bottom: var(--space-2);
+}
+.money-num, .section-number {
+  font-size: var(--text-number);
+  line-height: 1;
+  margin: 0 0 var(--space-3);
+}
+.money-notice, .benefit-header .benefit-date { font-size: var(--text-small); line-height: 1.6; }
+.career-description .bold-text, .plate-description .bold-text { font-size: inherit; font-weight: 700; }
+.career-description, .plate-description, .newsletter-description { margin-bottom: var(--space-4); }
+.hero-section .logo-wrap, .newsletter-logo-wrapper { margin-bottom: var(--space-3); }
+.hero-section .duration-box { margin-top: var(--space-4); }
+.hero-section .duration-title { margin-bottom: var(--space-1); }
+.hero-section .duration-date { margin-bottom: 0; }
+
+/* Section spacing excludes the scroll distance used by pinned animations. */
+.map-interactive-section, .vehicle-intro-section, .weekly-news-section,
+.feedback-banner-section, .newsletter-section { padding: var(--section-space) 0; }
+.property-section, .map-interactive-section { margin-bottom: 0; }
+.career-bottom-spacer, .plate-bottom-spacer { height: var(--section-space); }
+.career-container, .plate-container { padding-block: var(--section-space); }
+.plate-container { align-items: center; }
+.career-content, .plate-content { width: min(100%, 560px); max-width: 560px; }
+.career-progression-section, .license-plate-section { height: max(680px, 85vh); }
+.plate-brand-logo { height: 80px; margin-bottom: var(--space-3); }
+
+.benefit-section { padding: 0; }
+.benefit-header { margin-bottom: var(--space-5); }
+.benefit-header h2 { margin-bottom: 0; }
+.benefit-header .benefit-divider { width: min(100%, 700px); margin: var(--space-3) auto 0; }
+/* Padding keeps the line/date gap explicit, without collapsing margins. */
+.benefit-header .benefit-date { padding-top: var(--space-3); }
+.benefit-cards { gap: var(--space-3); margin-top: 0; }
+.benefit-card { flex: 1 1 0; min-width: 0; max-width: 340px; height: 360px; padding: 0; border: 0; }
+.benefit-card .card-back { padding: var(--space-3); }
+.benefit-card .card-num { font-size: var(--text-ui); margin-bottom: var(--space-3); }
+.benefit-card .card-icon-wrap { margin-bottom: var(--space-3); }
+.benefit-card .card-title { font-size: var(--text-subtitle); line-height: 1.4; margin-bottom: var(--space-2); }
+.benefit-card .card-desc { font-size: var(--text-ui); line-height: var(--body-leading); }
+.map-container, .v-header-container { gap: var(--space-5); }
+.property-selector { flex: 1; min-width: 0; }
+.map-wrapper { flex: 1.3; height: min(600px, 65vh); }
+.property-item { padding: var(--space-3) 0; }
+.property-item.active .detail-box { padding: var(--space-3); margin-top: var(--space-2); }
+.property-item .detail-box h4 { font-size: var(--text-ui); line-height: 1.5; margin-bottom: var(--space-2); }
+.property-item .detail-box p { font-size: var(--text-ui); line-height: var(--body-leading); }
+.weekly-grid-wrapper { justify-content: flex-start; gap: var(--space-3); }
+.grid-row-top, .grid-row-bottom, .right-grid-group { gap: var(--space-3); }
+.feedback-banner-container { height: auto; min-height: 240px; padding: var(--space-5); gap: var(--space-4); }
+.feedback-text-box { gap: var(--space-2); }
+.feedback-title, .feedback-description { margin: 0; }
+
+.btn-more, .plate-content .btn-more, .primary-cta-btn, .primary-cta-btn:hover,
+.btn-feedback-action, .btn-subscribe-action {
+  width: auto;
+  min-width: 200px;
+  max-width: 100%;
+  height: auto;
+  min-height: 56px;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-ui);
+  font-weight: 700;
+  line-height: 1.4;
+  border-radius: 32px;
+  box-shadow: none;
+  border: 2px solid #fff;
+  flex-shrink: 0;
+  text-align: center;
+}
+.vehicle-slider-section { height: auto; min-height: 100vh; padding-block: var(--section-space); }
+.slider-title { margin-bottom: var(--space-4); }
+.fixed-vehicle-info { padding-inline: var(--gutter); margin-bottom: var(--space-3); }
+.fixed-vehicle-info .brand { margin-bottom: var(--space-1); letter-spacing: 0.12em; }
+.fixed-vehicle-info .model-name { font-size: var(--text-title); line-height: var(--heading-leading); margin: 0 0 var(--space-1); }
+.fixed-vehicle-info .class-type, .spec-row, .spec-row .val { font-size: var(--text-ui); }
+.slide { width: min(650px, 100vw); flex-shrink: 0; padding-inline: var(--space-4); }
+.nav-btn-wrapper, .specs-box { width: min(500px, calc(100% - 2 * var(--gutter))); }
+.fixed-specs-container { margin: var(--space-4) 0 0; }
+.specs-box { padding-top: var(--space-3); }
+.spec-row { margin: var(--space-2) 0; }
+.spec-row .bar { margin-inline: var(--space-3); }
+
+.nav-container { padding-inline: var(--gutter); gap: var(--space-3); }
+.nav-left { gap: var(--space-4); }
+.nav-menu { gap: var(--space-3); }
+.nav-menu a { white-space: nowrap; font-size: var(--text-ui); }
+.nav-right { gap: var(--space-2); }
+.logo-link { gap: var(--space-2); flex-shrink: 0; }
+.btn-buy { font-size: var(--text-ui); white-space: nowrap; }
+.global-footer { padding-top: var(--space-5); }
+.footer-upper-links, .footer-middle-policy, .footer-bottom-copyright { padding-block: var(--space-4); gap: var(--space-3); }
+.footer-upper-links .links-left, .footer-middle-policy .policy-links-left,
+.locations-list, .social-icons-right { gap: var(--space-3); flex-wrap: wrap; }
+.footer-middle-policy { align-items: center; }
+.footer-upper-links .links-left a { font-size: var(--text-ui); }
+.footer-middle-policy .policy-links-left a, .company-brand-label,
+.locations-list, .footer-bottom-copyright { font-size: var(--text-small); }
+.rating-badges-outer { padding-block: var(--space-4); }
+.rating-badges-container { gap: var(--space-2); flex-wrap: wrap; }
+
+@media (max-width: 1200px) {
+  .sticky-nav { height: 136px; background-color: rgba(0, 0, 0, 0.85); }
+  .nav-container { height: 136px; position: relative; align-items: flex-start; padding-top: var(--space-2); }
+  .nav-left, .nav-right { height: 48px; }
+  .nav-menu { position: absolute; left: var(--gutter); right: var(--gutter); bottom: var(--space-2); overflow-x: auto; }
+  .nav-menu a { padding-block: var(--space-1); }
+  .hero-section .hero-content { bottom: 6%; }
+  .prev-btn { left: 0; }
+  .next-btn { right: 0; }
+}
+
+@media (max-width: 767px) {
+  .hero-section, .hero-sticky-viewport, .money-section, .property-section, .pinned-cta-section { height: max(760px, 100svh); }
+  .hero-section .hero-content { bottom: var(--space-5); }
+  .hero-section .hero-character-wrap { left: 15%; }
+  .hero-section .main-logo { height: 60px; }
+  .money-section .text-side { width: 100%; position: relative; z-index: 4; }
+  .money-section .money-gradient-overlay { background: linear-gradient(90deg, #000e, #0009); }
+  .property-section .property-content-right { margin-inline: var(--gutter); }
+  .property-section .gradient-overlay { background: linear-gradient(90deg, #000d, #000b); }
+  .benefit-section, .benefit-sticky-viewport { height: auto; min-height: 100svh; overflow: visible; }
+  .benefit-sticky-viewport { padding-block: var(--section-space); }
+  .benefit-cards { flex-direction: column; align-items: center; }
+  .benefit-card { flex: none; width: 100%; height: 320px; }
+  .map-interactive-section { height: auto; min-height: 100svh; overflow: visible; }
+  .map-container, .v-header-container { flex-direction: column; gap: var(--space-4); }
+  .property-selector, .map-wrapper, .vehicle-intro-section .text-left, .vehicle-intro-section .image-right { width: 100%; flex: auto; }
+  .map-wrapper { height: 360px; }
+  .career-progression-section, .license-plate-section { height: auto; min-height: 680px; }
+  .career-container, .plate-container { min-height: 680px; }
+  .career-overlay-layer { background: linear-gradient(90deg, #000b, #000e); }
+  .plate-overlay-layer { background: linear-gradient(90deg, #000e, #000b); }
+  .career-content { margin-left: 0; }
+  .slider-indicators { right: var(--gutter); bottom: var(--space-3); }
+  .feedback-banner-container { padding: var(--space-4); flex-direction: column; align-items: flex-start; }
+  .feedback-description br, .newsletter-description br { display: none; }
+  .nav-logo-text { height: 22px; }
+  .nav-logo-rockstar { height: 32px; }
+  .user-profile { display: none; }
+  .search-wrapper.active { position: absolute; right: var(--gutter); top: var(--space-2); width: min(280px, calc(100% - 2 * var(--gutter))); background: #111; z-index: 2; }
+  .btn-buy { padding-inline: var(--space-2); font-size: var(--text-small); }
+  .footer-upper-links, .footer-middle-policy, .footer-bottom-copyright { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-height: 800px) and (min-width: 768px) {
+  .hero-section, .hero-sticky-viewport, .money-section, .property-section,
+  .benefit-section, .benefit-sticky-viewport, .pinned-cta-section { height: 800px; }
+}
+
+/* V4.8: hero-only sizing; transforms remain controlled by the existing GSAP timeline. */
+.hero-section .hero-content { top: clamp(160px, 24%, 240px); bottom: auto; }
+.hero-section .hero-characters { height: 78%; }
+.hero-section .main-logo { height: 96px; }
+.hero-section .logo-wrap { margin-bottom: 20px; }
+.hero-section .main-title {
+  font-size: clamp(26px, 2.4vw, 34px);
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+.hero-section .sub-text {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  margin-bottom: 16px;
+}
+.hero-section .description-text { font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
+.hero-section .duration-box { margin-top: 20px; }
+.hero-section .duration-title { font-size: 14px; line-height: 1.5; margin-bottom: 8px; }
+.hero-section .duration-date { font-size: 16px; line-height: 1.5; }
+@media (max-width: 767px) {
+  .hero-section .hero-content { top: 160px; }
+  .hero-section .main-logo { height: 80px; }
+  .hero-section .sub-text { font-size: 15px; }
+}
